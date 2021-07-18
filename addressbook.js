@@ -105,13 +105,18 @@ class Contact{
                 +this.email;
     }
 }
-//UC3 create new address book array and add new contact
+//UC7 check duplicate
 let contacts=new Array();
 function AddContacts(firstname,lastname,address,city,state,zip,phoneNumber,email){
+    if(contacts.some(fname=> fname.firstname == firstname)){
+        console.log("Person is already exists");
+        return;
+    }
     let contact=new Contact(firstname,lastname,address,city,state,zip,phoneNumber,email);
     contacts.push(contact);
 }
 AddContacts('Piyush','Shaw','Howrah','Howrah','WestBengal','444444','91 8888888888','piyush@gmail.com');
+AddContacts('Shubham','Singh','Jamshedpur','Jamshedpur','Jharkhand','666666','91 9999999999','shubham@gmail.com');
 AddContacts('Shubham','Singh','Jamshedpur','Jamshedpur','Jharkhand','666666','91 9999999999','shubham@gmail.com');
 console.log(contacts.toString());
 
