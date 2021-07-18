@@ -114,3 +114,24 @@ function AddContacts(firstname,lastname,address,city,state,zip,phoneNumber,email
 AddContacts('Piyush','Shaw','Howrah','Howrah','WestBengal','444444','91 8888888888','piyush@gmail.com');
 AddContacts('Shubham','Singh','Jamshedpur','Jamshedpur','Jharkhand','666666','91 9999999999','shubham@gmail.com');
 console.log(contacts.toString());
+
+//UC4 edit by name
+function editContactByName(firstname){
+    for(let i = 0;i < contacts.length;i++){
+        if(contacts[i].firstname ==firstname){
+            return i;
+        }
+    }
+    return -1;
+}
+let contactindex=editContactByName('Shubham');
+if(contactindex!=-1){
+    console.log("Before Update: ");
+    console.log(contacts.toString());
+    contacts[contactindex].firstname='Rahul';
+    contacts[contactindex].city='Bokaro';
+    console.log("After Update: ");
+    console.log(contacts.toString());
+}else{
+    console.log("Name not found");
+}
