@@ -156,3 +156,16 @@ deleteContactByName('Rahul');
 //UC6 number of persons in address book
 let count = contacts.reduce(count => count +=1,0);
 console.log("Number Of persons in Address Book is : " +count);
+
+//UC8 search by city or state
+function SearchCityOrState(cityOrState){
+    if(contacts.filter((p=>p.city==cityOrState)||(p=>p.state==cityOrState))){
+        console.log(contacts.toString());
+    }
+}
+//searching with city
+console.log("**Search by City:");
+SearchCityOrState('Howrah');
+//searching with state
+console.log("**Search by State:");
+SearchCityOrState('WestBengal');
